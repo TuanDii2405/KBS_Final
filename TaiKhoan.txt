@@ -1,0 +1,210 @@
+{
+  "users": {
+    "engineer": {
+      "username": "engineer",
+      "password": "123456",
+      "full_name": "Quản Trị Viên Hệ Thống",
+      "role": "engineer",
+      "theta_math": 2.5,
+      "theta_chem": 2.5,
+      "node_stats": {
+        "MATH_DERIV_01": {
+          "correct": 10,
+          "total": 10
+        },
+        "MATH_DERIV_02": {
+          "correct": 10,
+          "total": 10
+        },
+        "MATH_INTEG_01": {
+          "correct": 10,
+          "total": 10
+        },
+        "CHEM_BAL_01": {
+          "correct": 10,
+          "total": 10
+        },
+        "CHEM_BAL_02": {
+          "correct": 10,
+          "total": 10
+        },
+        "CHEM_REACT_01": {
+          "correct": 10,
+          "total": 10
+        }
+      },
+      "recent_questions": []
+    },
+    "sv001": {
+      "username": "sv001",
+      "password": "123456",
+      "full_name": "Nguyễn Minh Quân",
+      "role": "student",
+      "theta_math": -0.54,
+      "theta_chem": -0.45,
+      "node_stats": {
+        "MATH_DERIV_01": {
+          "correct": 9,
+          "total": 14
+        },
+        "MATH_DERIV_02": {
+          "correct": 3,
+          "total": 15
+        },
+        "MATH_INTEG_01": {
+          "correct": 4,
+          "total": 8
+        },
+        "CHEM_BAL_01": {
+          "correct": 5,
+          "total": 6
+        },
+        "CHEM_BAL_02": {
+          "correct": 2,
+          "total": 7
+        },
+        "CHEM_REACT_01": {
+          "correct": 6,
+          "total": 7
+        }
+      },
+      "recent_questions": [
+        "Q_MATH_001",
+        "Q_MATH_004",
+        "Q_MATH_011",
+        "Q_CHEM_001",
+        "Q_CHEM_003",
+        "Q_MATH_005",
+        "Q_MATH_021",
+        "Q_MATH_040",
+        "Q_MATH_013",
+        "Q_MATH_039",
+        "Q_MATH_044",
+        "Q_MATH_065",
+        "Q_MATH_070",
+        "Q_MATH_091",
+        "Q_MATH_096",
+        "Q_MATH_003",
+        "Q_MATH_028",
+        "Q_MATH_054"
+      ]
+    },
+    "sv002": {
+      "username": "sv002",
+      "password": "123456",
+      "full_name": "Trần Hoàng Bảo",
+      "role": "student",
+      "theta_math": 1.45,
+      "theta_chem": 0.85,
+      "node_stats": {
+        "MATH_DERIV_01": {
+          "correct": 9,
+          "total": 9
+        },
+        "MATH_DERIV_02": {
+          "correct": 8,
+          "total": 9
+        },
+        "MATH_INTEG_01": {
+          "correct": 8,
+          "total": 9
+        },
+        "CHEM_BAL_01": {
+          "correct": 7,
+          "total": 8
+        },
+        "CHEM_BAL_02": {
+          "correct": 6,
+          "total": 8
+        },
+        "CHEM_REACT_01": {
+          "correct": 8,
+          "total": 8
+        }
+      },
+      "recent_questions": [
+        "Q_MATH_005",
+        "Q_MATH_010",
+        "Q_MATH_016",
+        "Q_CHEM_005"
+      ]
+    },
+    "sv003": {
+      "username": "sv003",
+      "password": "123456",
+      "full_name": "Lê Thu Hà",
+      "role": "student",
+      "theta_math": -0.95,
+      "theta_chem": 1.15,
+      "node_stats": {
+        "MATH_DERIV_01": {
+          "correct": 4,
+          "total": 7
+        },
+        "MATH_DERIV_02": {
+          "correct": 2,
+          "total": 7
+        },
+        "MATH_INTEG_01": {
+          "correct": 2,
+          "total": 7
+        },
+        "CHEM_BAL_01": {
+          "correct": 8,
+          "total": 8
+        },
+        "CHEM_BAL_02": {
+          "correct": 7,
+          "total": 8
+        },
+        "CHEM_REACT_01": {
+          "correct": 8,
+          "total": 8
+        }
+      },
+      "recent_questions": [
+        "Q_MATH_001",
+        "Q_MATH_008",
+        "Q_CHEM_004"
+      ]
+    },
+    "sv004": {
+      "username": "sv004",
+      "password": "123456",
+      "full_name": "Phạm Quốc Đạt",
+      "role": "student",
+      "theta_math": -1.25,
+      "theta_chem": -1.1,
+      "node_stats": {
+        "MATH_DERIV_01": {
+          "correct": 3,
+          "total": 7
+        },
+        "MATH_DERIV_02": {
+          "correct": 1,
+          "total": 6
+        },
+        "MATH_INTEG_01": {
+          "correct": 2,
+          "total": 6
+        },
+        "CHEM_BAL_01": {
+          "correct": 3,
+          "total": 7
+        },
+        "CHEM_BAL_02": {
+          "correct": 1,
+          "total": 6
+        },
+        "CHEM_REACT_01": {
+          "correct": 3,
+          "total": 6
+        }
+      },
+      "recent_questions": [
+        "Q_MATH_001",
+        "Q_CHEM_001"
+      ]
+    }
+  }
+}

@@ -1,0 +1,659 @@
+{
+  "concept_nodes": {
+    "MATH_DERIV_01": {
+      "name": "Định nghĩa đạo hàm & Tiếp tuyến đồ thị",
+      "subject": "MATH",
+      "topic": "DAO_HAM"
+    },
+    "MATH_DERIV_02": {
+      "name": "Đạo hàm hàm hợp & Lượng giác - Mũ - Logarit",
+      "subject": "MATH",
+      "topic": "DAO_HAM"
+    },
+    "MATH_INTEG_01": {
+      "name": "Nguyên hàm cơ bản & Tính chất tuyến tính",
+      "subject": "MATH",
+      "topic": "NGUYEN_HAM"
+    },
+    "CHEM_BAL_01": {
+      "name": "Bảo toàn nguyên tố & Cân bằng PTHH cơ bản",
+      "subject": "CHEM",
+      "topic": "CAN_BANG_PTHH"
+    },
+    "CHEM_BAL_02": {
+      "name": "Cân bằng phản ứng Oxi hóa - Khử (Thăng bằng electron)",
+      "subject": "CHEM",
+      "topic": "CAN_BANG_PTHH"
+    },
+    "CHEM_REACT_01": {
+      "name": "Phân loại các phản ứng hóa học vô cơ",
+      "subject": "CHEM",
+      "topic": "PHAN_UNG_HOA_HOC"
+    }
+  },
+  "formula_rules": {
+    "DRV_POW": {
+      "name": "Đạo hàm hàm lũy thừa x^n, đa thức & căn cơ bản",
+      "concept_node": "MATH_DERIV_01",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_EXPR",
+        "FORM_VAL_POINT",
+        "FORM_TANGENT_SLOPE",
+        "FORM_TANGENT_EQ",
+        "FORM_SOLVE_COND"
+      ],
+      "latex_formula": "$(x^n)' = n \\cdot x^{n-1}; \\quad (\\sqrt{x})' = \\frac{1}{2\\sqrt{x}}; \\quad \\left(\\frac{1}{x}\\right)' = -\\frac{1}{x^2}$",
+      "general_method": "Bước 1: Áp dụng đạo hàm lũy thừa $(x^n)' = n \\cdot x^{n-1}$ cho từng hạng tử, đạo hàm hằng số bằng $0$. Bước 2: Nếu tính tại $x_0$, thay $x = x_0$ vào biểu thức $f'(x)$."
+    },
+    "DRV_PROD": {
+      "name": "Đạo hàm của tích u.v và tích nhiều nhân tử",
+      "concept_node": "MATH_DERIV_01",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_EXPR",
+        "FORM_VAL_POINT",
+        "FORM_TANGENT_SLOPE",
+        "FORM_SOLVE_COND"
+      ],
+      "latex_formula": "$(u \\cdot v)' = u'v + uv'; \\quad (uvw)' = u'vw + uv'w + uvw'$",
+      "general_method": "Bước 1: Xác định $u(x), v(x)$ và tính riêng $u'(x), v'(x)$. Bước 2: Ráp vào công thức $(u \\cdot v)' = u'v + uv'$ rồi khai triển, rút gọn."
+    },
+    "DRV_QUOT": {
+      "name": "Đạo hàm của thương u/v và hàm phân thức",
+      "concept_node": "MATH_DERIV_01",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_EXPR",
+        "FORM_VAL_POINT",
+        "FORM_TANGENT_SLOPE",
+        "FORM_TANGENT_EQ",
+        "FORM_SOLVE_COND"
+      ],
+      "latex_formula": "$\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}; \\quad \\left(\\frac{ax+b}{cx+d}\\right)' = \\frac{ad - bc}{(cx+d)^2}$",
+      "general_method": "Với phân thức bậc 1/bậc 1 tính định thức $ad - bc$ chia $(cx+d)^2$. Với phân thức bậc cao áp dụng $\\frac{u'v - uv'}{v^2}$."
+    },
+    "DRV_HIGH": {
+      "name": "Đạo hàm cấp cao (y'', y''', đạo hàm cấp n)",
+      "concept_node": "MATH_DERIV_01",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_HIGH_ORDER",
+        "FORM_VAL_POINT",
+        "FORM_SOLVE_COND"
+      ],
+      "latex_formula": "$y'' = (y')'; \\quad y''' = (y'')'; \\quad (e^{kx})^{(n)} = k^n e^{kx}$",
+      "general_method": "Tính liên tiếp đạo hàm cấp 1 $y'$, sau đó lấy đạo hàm của $y'$ để thu được $y''$, tiếp tục cho cấp 3 hoặc quy nạp cấp $n$."
+    },
+    "DRV_PARAM_TAN": {
+      "name": "Tiếp tuyến song song, vuông góc & điều kiện tiếp xúc",
+      "concept_node": "MATH_DERIV_01",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_TANGENT_EQ",
+        "FORM_TANGENT_SLOPE",
+        "FORM_FUNC_PROP"
+      ],
+      "latex_formula": "$\\Delta \\parallel d: k = k_d; \\quad \\Delta \\perp d: k \\cdot k_d = -1$",
+      "general_method": "Bước 1: Xác định hệ số góc $k$ từ quan hệ song song/vuông góc. Bước 2: Giải phương trình $f'(x_0) = k$ tìm $x_0$, tính $y_0 = f(x_0)$ và viết phương trình tiếp tuyến."
+    },
+    "DRV_CHAIN": {
+      "name": "Đạo hàm hàm hợp [u(x)]^n, căn thức và hàm ẩn f(g(x))",
+      "concept_node": "MATH_DERIV_02",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_EXPR",
+        "FORM_VAL_POINT",
+        "FORM_SOLVE_COND",
+        "FORM_HIGH_ORDER"
+      ],
+      "latex_formula": "$[u(x)^n]' = n \\cdot u(x)^{n-1} \\cdot u'(x); \\quad (\\sqrt{u})' = \\frac{u'}{2\\sqrt{u}}; \\quad [f(g(x))]' = g'(x) \\cdot f'(g(x))$",
+      "general_method": "Bước 1: Xác định hàm trung gian $u(x)$ và tính $u'(x)$. Bước 2: Đạo hàm lớp ngoài theo $u$ rồi nhân thêm $u'(x)$."
+    },
+    "DRV_TRIG": {
+      "name": "Đạo hàm hàm lượng giác (sin u, cos u, tan u, cot u, sin^n u)",
+      "concept_node": "MATH_DERIV_02",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_EXPR",
+        "FORM_VAL_POINT",
+        "FORM_SOLVE_COND",
+        "FORM_HIGH_ORDER"
+      ],
+      "latex_formula": "$(\\sin u)' = u'\\cos u; \\quad (\\cos u)' = -u'\\sin u; \\quad (\\tan u)' = \\frac{u'}{\\cos^2 u}; \\quad (\\cot u)' = -\\frac{u'}{\\sin^2 u}$",
+      "general_method": "Áp dụng công thức lượng giác tương ứng và luôn nhân thêm đạo hàm của biểu thức góc $u'(x)$ (nếu có lũy thừa bậc $n$ thì hạ bậc mũ trước)."
+    },
+    "DRV_EXP": {
+      "name": "Đạo hàm hàm số mũ (a^x, e^u, a^u, P(x).e^u)",
+      "concept_node": "MATH_DERIV_02",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_EXPR",
+        "FORM_VAL_POINT",
+        "FORM_SOLVE_COND",
+        "FORM_HIGH_ORDER"
+      ],
+      "latex_formula": "$(a^x)' = a^x \\ln a; \\quad (e^u)' = u' e^u; \\quad (a^u)' = u' a^u \\ln a$",
+      "general_method": "Giữ nguyên lũy thừa mũ $a^u$, nhân với $\\ln a$ (nếu $a \\neq e$) và nhân với đạo hàm số mũ $u'(x)$."
+    },
+    "DRV_LOG": {
+      "name": "Đạo hàm hàm số logarit (ln u, log_a u, ln|u|)",
+      "concept_node": "MATH_DERIV_02",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_EXPR",
+        "FORM_VAL_POINT",
+        "FORM_SOLVE_COND",
+        "FORM_FUNC_PROP"
+      ],
+      "latex_formula": "$(\\ln u)' = \\frac{u'}{u}; \\quad (\\log_a u)' = \\frac{u'}{u \\ln a}; \\quad (\\ln|u|)' = \\frac{u'}{u}$",
+      "general_method": "Kiểm tra điều kiện $u(x) > 0$, lấy đạo hàm $u'(x)$ chia cho chính $u(x)$ (nhân thêm $\\ln a$ dưới mẫu nếu là $\\log_a$)."
+    },
+    "DRV_EXTREMA": {
+      "name": "Ứng dụng đạo hàm xét đơn điệu, cực trị & tham số m",
+      "concept_node": "MATH_DERIV_02",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_MONOTONIC",
+        "FORM_FUNC_PROP",
+        "FORM_SOLVE_COND"
+      ],
+      "latex_formula": "$y' \\ge 0 \\Rightarrow \\text{Đồng biến}; \\quad y'(x_0) = 0 \\text{ và đổi dấu} \\Rightarrow \\text{Cực trị}$",
+      "general_method": "Bước 1: Tính $y'$. Bước 2: Giải $y' = 0$ tìm các điểm tới hạn và lập bảng xét dấu $y'$ để kết luận khoảng đơn điệu hoặc cực trị."
+    },
+    "INT_POW": {
+      "name": "Nguyên hàm hàm lũy thừa x^n, căn thức & 1/x^n",
+      "concept_node": "MATH_INTEG_01",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_EXPR",
+        "FORM_VAL_POINT"
+      ],
+      "latex_formula": "$\\int x^n dx = \\frac{x^{n+1}}{n+1} + C \\ (n \\neq -1); \\quad \\int \\frac{1}{x}dx = \\ln|x| + C; \\quad \\int \\sqrt{x}dx = \\frac{2}{3}x\\sqrt{x} + C$",
+      "general_method": "Đưa căn thức hoặc mẫu số về dạng lũy thừa $x^\\alpha$, cộng $1$ vào số mũ rồi chia cho $(\\alpha + 1)$, cuối cùng cộng hằng số $C$."
+    },
+    "INT_LINEAR": {
+      "name": "Tính chất tuyến tính & biến đổi tổng - hiệu sơ cấp",
+      "concept_node": "MATH_INTEG_01",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_EXPR",
+        "FORM_VAL_POINT",
+        "FORM_SOLVE_COND",
+        "FORM_FUNC_PROP"
+      ],
+      "latex_formula": "$\\int [k f(x) \\pm m g(x)]dx = k\\int f(x)dx \\pm m\\int g(x)dx$",
+      "general_method": "Khai triển tích hoặc chia tử cho mẫu để tách thành tổng/hiệu các hàm sơ cấp, sau đó lấy nguyên hàm từng hạng tử."
+    },
+    "INT_TRIG_EXP": {
+      "name": "Nguyên hàm lượng giác & hàm mũ (e^{kx+m}, a^x, sin, cos, 1/cos^2 x)",
+      "concept_node": "MATH_INTEG_01",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_EXPR",
+        "FORM_VAL_POINT",
+        "FORM_SOLVE_COND"
+      ],
+      "latex_formula": "$\\int e^{kx+m}dx = \\frac{1}{k}e^{kx+m} + C; \\quad \\int \\cos(kx)dx = \\frac{1}{k}\\sin(kx) + C; \\quad \\int \\frac{dx}{\\cos^2(kx)} = \\frac{1}{k}\\tan(kx) + C$",
+      "general_method": "Áp dụng bảng nguyên hàm cơ bản; nếu đối số là hàm bậc nhất $kx+m$ thì nhân thêm $\\frac{1}{k}$ phía trước."
+    },
+    "INT_SUBST": {
+      "name": "Nguyên hàm bằng phương pháp đổi biến số",
+      "concept_node": "MATH_INTEG_01",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_EXPR",
+        "FORM_VAL_POINT"
+      ],
+      "latex_formula": "$\\int f(u(x)) \\cdot u'(x)dx = \\int f(u)du = F(u(x)) + C$",
+      "general_method": "Đặt $u = u(x)$ sao cho vi phân $du = u'(x)dx$ xuất hiện trong biểu thức dưới dấu tích phân, tính nguyên hàm theo $u$ rồi trả về biến $x$."
+    },
+    "INT_PARTS": {
+      "name": "Nguyên hàm từng phần (Nhất lô - Nhì đa - Tam lượng - Tứ mũ)",
+      "concept_node": "MATH_INTEG_01",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_EXPR",
+        "FORM_VAL_POINT",
+        "FORM_SOLVE_COND"
+      ],
+      "latex_formula": "$\\int u \\, dv = u \\cdot v - \\int v \\, du$",
+      "general_method": "Đặt $u$ theo thứ tự ưu tiên (Logarit -> Đa thức -> Lượng giác -> Mũ), phần còn lại là $dv$. Tính $du, v$ rồi áp dụng $uv - \\int v du$."
+    },
+    "INT_FRAC": {
+      "name": "Nguyên hàm phân thức hữu tỉ (1/(ax+b), tách phân thức)",
+      "concept_node": "MATH_INTEG_01",
+      "subject": "MATH",
+      "allowed_forms": [
+        "FORM_EXPR",
+        "FORM_VAL_POINT",
+        "FORM_FUNC_PROP"
+      ],
+      "latex_formula": "$\\int \\frac{dx}{ax+b} = \\frac{1}{a}\\ln|ax+b| + C; \\quad \\int \\frac{dx}{x^2 - a^2} = \\frac{1}{2a}\\ln\\left|\\frac{x-a}{x+a}\\right| + C$",
+      "general_method": "Nếu bậc tử $\\ge$ bậc mẫu thì chia đa thức; nếu mẫu có nghiệm phân biệt thì tách thành tổng các phân thức bậc nhất $\\frac{A}{x-x_1} + \\frac{B}{x-x_2}$."
+    },
+    "BAL_ATOM": {
+      "name": "Bảo toàn nguyên tử các nguyên tố đơn lẻ",
+      "concept_node": "CHEM_BAL_01",
+      "subject": "CHEM",
+      "allowed_forms": [
+        "FORM_CHEM_COEFF",
+        "FORM_CHEM_RATIO",
+        "FORM_CHEM_CONSERVE"
+      ],
+      "latex_formula": "$\\sum N_{\\text{nguyên tử (Tham gia)}} = \\sum N_{\\text{nguyên tử (Sản phẩm)}}$",
+      "general_method": "Bước 1: Làm chẵn nguyên tố có chỉ số lẻ. Bước 2: Cân bằng kim loại $\\rightarrow$ phi kim $\\rightarrow$ Hiđro $\\rightarrow$ kiểm tra lại bằng Oxi."
+    },
+    "BAL_GROUP": {
+      "name": "Bảo toàn nhóm nguyên tử (-OH, -NO3, =SO4, =CO3, -PO4)",
+      "concept_node": "CHEM_BAL_01",
+      "subject": "CHEM",
+      "allowed_forms": [
+        "FORM_CHEM_COEFF",
+        "FORM_CHEM_RATIO",
+        "FORM_CHEM_CONSERVE"
+      ],
+      "latex_formula": "$\\sum N_{\\text{nhóm nguyên tử (Trái)}} = \\sum N_{\\text{nhóm nguyên tử (Phải)}}$",
+      "general_method": "Trong phản ứng trao đổi không phá vỡ gốc axit, giữ nguyên cả nhóm ($\\text{SO}_4, \\text{NO}_3, \\text{PO}_4$) để cân bằng nhanh theo chỉ số muối rồi cân bằng $\\text{H}_2\\text{O}$."
+    },
+    "BAL_ALGEBRA": {
+      "name": "Cân bằng đại số & phương pháp hệ số phân số",
+      "concept_node": "CHEM_BAL_01",
+      "subject": "CHEM",
+      "allowed_forms": [
+        "FORM_CHEM_COEFF",
+        "FORM_CHEM_CONSERVE"
+      ],
+      "latex_formula": "Đặt ẩn $a, b, c, d$ rồi lập hệ bảo toàn từng nguyên tố $\\Rightarrow$ Quy đồng mẫu chung",
+      "general_method": "Dùng hệ số phân số cho đơn chất (như $\\frac{11}{2}\\text{O}_2$) hoặc đặt ẩn đại số cho các phản ứng phức tạp (đốt cháy $\\text{FeS}_2, \\text{NH}_3, \\text{CuFeS}_2$) rồi nhân khử mẫu."
+    },
+    "BAL_ION": {
+      "name": "Cân bằng phương trình ion rút gọn & bảo toàn điện tích",
+      "concept_node": "CHEM_BAL_01",
+      "subject": "CHEM",
+      "allowed_forms": [
+        "FORM_CHEM_COEFF",
+        "FORM_CHEM_CONSERVE",
+        "FORM_CHEM_PRODUCT"
+      ],
+      "latex_formula": "$\\sum q_{\\text{ion (Trái)}} = \\sum q_{\\text{ion (Phải)}}$",
+      "general_method": "Cân bằng số nguyên tử các nguyên tố ở hai vế đồng thời đảm bảo tổng điện tích vế trái bằng tổng điện tích vế phải."
+    },
+    "BAL_REDOX_STD": {
+      "name": "Thăng bằng electron chuẩn (1 chất khử - 1 chất oxi hóa)",
+      "concept_node": "CHEM_BAL_02",
+      "subject": "CHEM",
+      "allowed_forms": [
+        "FORM_CHEM_COEFF",
+        "FORM_CHEM_RATIO",
+        "FORM_CHEM_OXIDATION"
+      ],
+      "latex_formula": "$\\sum n_{e \\text{ nhường}} = \\sum n_{e \\text{ nhận}}$",
+      "general_method": "Bước 1: Xác định số oxi hóa thay đổi. Bước 2: Viết quá trình nhường - nhận $e$. Bước 3: Tìm BCNN nhân chéo đặt hệ số."
+    },
+    "BAL_REDOX_ENV": {
+      "name": "Cân bằng Oxi hóa - Khử có môi trường axit (HNO3, H2SO4 đặc)",
+      "concept_node": "CHEM_BAL_02",
+      "subject": "CHEM",
+      "allowed_forms": [
+        "FORM_CHEM_COEFF",
+        "FORM_CHEM_RATIO",
+        "FORM_CHEM_CONSERVE"
+      ],
+      "latex_formula": "$n_{\\text{Axit tổng}} = n_{\\text{Gốc axit trong muối}} + n_{\\text{Gốc axit tạo sản phẩm khử}}$",
+      "general_method": "Sau khi nhân chéo hệ số electron cho kim loại và sản phẩm khử ($\\text{NO}, \\text{NO}_2, \\text{N}_2\\text{O}, \\text{NH}_4\\text{NO}_3, \\text{SO}_2$), cộng tổng nguyên tử $\\text{N}$ hoặc $\\text{S}$ ở vế phải để đặt hệ số cho axit."
+    },
+    "BAL_REDOX_SELF": {
+      "name": "Cân bằng phản ứng tự oxi hóa - khử & nội oxi hóa - khử",
+      "concept_node": "CHEM_BAL_02",
+      "subject": "CHEM",
+      "allowed_forms": [
+        "FORM_CHEM_COEFF",
+        "FORM_CHEM_RATIO",
+        "FORM_CHEM_OXIDATION"
+      ],
+      "latex_formula": "$\\text{Cl}_2^0 + \\text{NaOH} \\rightarrow \\text{NaCl}^{-1} + \\text{NaClO}^{+1} + \\text{H}_2\\text{O}$",
+      "general_method": "Cân bằng từ vế phải (sản phẩm) trước dựa trên quá trình vừa tăng vừa giảm số oxi hóa của cùng một nguyên tố, sau đó cộng dồn về chất tham gia ở vế trái."
+    },
+    "BAL_REDOX_MULTI": {
+      "name": "Thăng bằng electron đa nguyên tố (FeS2, Cu2S, FexOy + HNO3/H2SO4)",
+      "concept_node": "CHEM_BAL_02",
+      "subject": "CHEM",
+      "allowed_forms": [
+        "FORM_CHEM_COEFF",
+        "FORM_CHEM_RATIO",
+        "FORM_CHEM_OXIDATION",
+        "FORM_CHEM_CONSERVE"
+      ],
+      "latex_formula": "$\\text{FeS}_2^0 \\rightarrow \\text{Fe}^{+3} + 2\\text{S}^{+6} + 15e; \\quad \\text{Fe}_x\\text{O}_y \\rightarrow x\\text{Fe}^{+3} + (3x - 2y)e$",
+      "general_method": "Coi cả phân tử hợp chất khử (như $\\text{FeS}_2, \\text{Cu}_2\\text{S}, \\text{Fe}_3\\text{O}_4$) là một chỉnh thể nhường electron, tính tổng số $e$ nhường rồi thăng bằng với chất oxi hóa."
+    },
+    "REACT_TYPE_4": {
+      "name": "Phân loại 4 phản ứng vô cơ (Hóa hợp, Phân hủy, Thế, Trao đổi)",
+      "concept_node": "CHEM_REACT_01",
+      "subject": "CHEM",
+      "allowed_forms": [
+        "FORM_CHEM_CLASS",
+        "FORM_CHEM_PRODUCT"
+      ],
+      "latex_formula": "Hóa hợp: $A+B\\rightarrow C$; Phân hủy: $A\\rightarrow B+C$; Thế: $A+BC\\rightarrow AC+B$; Trao đổi: $AB+CD\\rightarrow AD+CB$",
+      "general_method": "Đếm số chất tham gia và sản phẩm kết hợp bản chất trao đổi ion hay thay đổi số oxi hóa để phân loại chính xác."
+    },
+    "REACT_REDOX_ID": {
+      "name": "Xác định số oxi hóa, chất khử, chất oxi hóa & chất môi trường",
+      "concept_node": "CHEM_REACT_01",
+      "subject": "CHEM",
+      "allowed_forms": [
+        "FORM_CHEM_CLASS",
+        "FORM_CHEM_OXIDATION",
+        "FORM_CHEM_RATIO"
+      ],
+      "latex_formula": "Khử tăng ($0 \\rightarrow +n$, bị oxi hóa); \\quad Oxi hóa giảm ($+m \\rightarrow 0$, bị khử)",
+      "general_method": "Tính số oxi hóa từng nguyên tố trước và sau phản ứng: tăng là chất khử, giảm là chất oxi hóa."
+    },
+    "REACT_EXCHANGE_COND": {
+      "name": "Điều kiện phản ứng trao đổi ion, nhận biết kết tủa & chất khí",
+      "concept_node": "CHEM_REACT_01",
+      "subject": "CHEM",
+      "allowed_forms": [
+        "FORM_CHEM_PRODUCT",
+        "FORM_CHEM_CLASS"
+      ],
+      "latex_formula": "Trao đổi ion xảy ra khi tạo: $\\downarrow$ (Kết tủa), $\\uparrow$ (Chất khí) hoặc chất điện li yếu ($\\text{H}_2\\text{O}$)",
+      "general_method": "Kiểm tra bảng tính tan và sản phẩm sinh ra: nếu có $\\text{AgCl}\\downarrow, \\text{BaSO}_4\\downarrow, \\text{CaCO}_3\\downarrow, \\text{Fe(OH)}_3\\downarrow, \\text{CO}_2\\uparrow, \\text{H}_2\\text{O}$ thì phản ứng xảy ra."
+    },
+    "REACT_ELECTROCHEM": {
+      "name": "Dãy hoạt động kim loại, phản ứng axit & thụ động hóa",
+      "concept_node": "CHEM_REACT_01",
+      "subject": "CHEM",
+      "allowed_forms": [
+        "FORM_CHEM_PRODUCT",
+        "FORM_CHEM_CLASS",
+        "FORM_CHEM_CONSERVE"
+      ],
+      "latex_formula": "$\\text{K, Na, Ba, Ca, Mg, Al, Zn, Fe, Ni, Sn, Pb, (H), Cu, Hg, Ag, Pt, Au}$",
+      "general_method": "Kim loại đứng trước $\\text{H}$ tác dụng được với $\\text{HCl}, \\text{H}_2\\text{SO}_4$ loãng; $\\text{Al}, \\text{Fe}, \\text{Cr}$ bị thụ động trong $\\text{HNO}_3, \\text{H}_2\\text{SO}_4$ đặc nguội; kim loại mạnh đẩy kim loại yếu khỏi dung dịch muối."
+    }
+  },
+  "question_forms": {
+    "FORM_EXPR": {
+      "name": "Tìm công thức / biểu thức đạo hàm hoặc nguyên hàm",
+      "subject": "MATH",
+      "concept_nodes": [
+        "MATH_DERIV_01",
+        "MATH_DERIV_02",
+        "MATH_INTEG_01"
+      ]
+    },
+    "FORM_VAL_POINT": {
+      "name": "Tính giá trị đạo hàm f'(x0) hoặc nguyên hàm F(x0) tại điểm",
+      "subject": "MATH",
+      "concept_nodes": [
+        "MATH_DERIV_01",
+        "MATH_DERIV_02",
+        "MATH_INTEG_01"
+      ]
+    },
+    "FORM_TANGENT_SLOPE": {
+      "name": "Tính hệ số góc của tiếp tuyến tại điểm",
+      "subject": "MATH",
+      "concept_nodes": [
+        "MATH_DERIV_01"
+      ]
+    },
+    "FORM_TANGENT_EQ": {
+      "name": "Viết phương trình tiếp tuyến (tại điểm / song song / vuông góc)",
+      "subject": "MATH",
+      "concept_nodes": [
+        "MATH_DERIV_01"
+      ]
+    },
+    "FORM_SOLVE_COND": {
+      "name": "Giải phương trình / bất phương trình hoặc đồng nhất hệ số",
+      "subject": "MATH",
+      "concept_nodes": [
+        "MATH_DERIV_01",
+        "MATH_DERIV_02",
+        "MATH_INTEG_01"
+      ]
+    },
+    "FORM_HIGH_ORDER": {
+      "name": "Tính đạo hàm cấp cao (y'', y''') hoặc hệ thức đạo hàm",
+      "subject": "MATH",
+      "concept_nodes": [
+        "MATH_DERIV_01",
+        "MATH_DERIV_02"
+      ]
+    },
+    "FORM_MONOTONIC": {
+      "name": "Xét khoảng đồng biến - nghịch biến & cực trị bằng đạo hàm",
+      "subject": "MATH",
+      "concept_nodes": [
+        "MATH_DERIV_02"
+      ]
+    },
+    "FORM_FUNC_PROP": {
+      "name": "Bài toán tham số m & tính chất hàm số nâng cao",
+      "subject": "MATH",
+      "concept_nodes": [
+        "MATH_DERIV_01",
+        "MATH_DERIV_02",
+        "MATH_INTEG_01"
+      ]
+    },
+    "FORM_CHEM_COEFF": {
+      "name": "Tìm hệ số cân bằng tối giản hoặc tổng hệ số các chất",
+      "subject": "CHEM",
+      "concept_nodes": [
+        "CHEM_BAL_01",
+        "CHEM_BAL_02"
+      ]
+    },
+    "FORM_CHEM_RATIO": {
+      "name": "Tìm tỉ lệ hệ số chất khử, chất oxi hóa hoặc axit môi trường",
+      "subject": "CHEM",
+      "concept_nodes": [
+        "CHEM_BAL_01",
+        "CHEM_BAL_02",
+        "CHEM_REACT_01"
+      ]
+    },
+    "FORM_CHEM_CLASS": {
+      "name": "Nhận diện loại phản ứng hóa học và vai trò các chất",
+      "subject": "CHEM",
+      "concept_nodes": [
+        "CHEM_REACT_01"
+      ]
+    },
+    "FORM_CHEM_PRODUCT": {
+      "name": "Dự đoán sản phẩm, điều kiện phản ứng & hiện tượng kết tủa/khí",
+      "subject": "CHEM",
+      "concept_nodes": [
+        "CHEM_BAL_01",
+        "CHEM_REACT_01"
+      ]
+    },
+    "FORM_CHEM_OXIDATION": {
+      "name": "Xác định số oxi hóa & tổng số electron trao đổi",
+      "subject": "CHEM",
+      "concept_nodes": [
+        "CHEM_BAL_02",
+        "CHEM_REACT_01"
+      ]
+    },
+    "FORM_CHEM_CONSERVE": {
+      "name": "Tính nhanh hệ số / lượng chất theo định luật bảo toàn",
+      "subject": "CHEM",
+      "concept_nodes": [
+        "CHEM_BAL_01",
+        "CHEM_BAL_02",
+        "CHEM_REACT_01"
+      ]
+    }
+  },
+  "chemical_knowledge": {
+    "precipitates": {
+      "AgCl": "Kết tủa trắng (không tan trong axit mạnh)",
+      "BaSO4": "Kết tủa trắng (bền vững trong axit mạnh)",
+      "CaCO3": "Kết tủa trắng (tan trong axit giải phóng CO2)",
+      "Cu(OH)2": "Kết tủa màu xanh lam",
+      "Fe(OH)3": "Kết tủa màu nâu đỏ",
+      "Fe(OH)2": "Kết tủa trắng xanh (hóa nâu đỏ ngoài không khí)",
+      "Al(OH)3": "Kết tủa keo trắng (lưỡng tính, tan trong kiềm dư)"
+    },
+    "gases": {
+      "NO": "Khí không màu, hóa nâu đỏ ngoài không khí",
+      "NO2": "Khí màu nâu đỏ, mùi hắc",
+      "SO2": "Khí không màu, mùi hắc, làm mất màu dung dịch Br2",
+      "CO2": "Khí không màu, làm đục nước vôi trong Ca(OH)2",
+      "H2": "Khí không màu, nhẹ nhất, cháy cho ngọn lửa xanh nhạt",
+      "Cl2": "Khí màu vàng lục, mùi xốc, tính oxi hóa mạnh",
+      "NH3": "Khí mùi khai, làm xanh giấy quỳ tím ẩm"
+    },
+    "passivation_rule": "Al, Fe, Cr bị thụ động hóa (không phản ứng) trong HNO3 đặc nguội và H2SO4 đặc nguội.",
+    "activity_series": [
+      "K",
+      "Na",
+      "Ba",
+      "Ca",
+      "Mg",
+      "Al",
+      "Zn",
+      "Fe",
+      "Ni",
+      "Sn",
+      "Pb",
+      "(H)",
+      "Cu",
+      "Hg",
+      "Ag",
+      "Pt",
+      "Au"
+    ]
+  },
+  "prerequisite_graph": {
+    "MATH_DERIV_02": [
+      "MATH_DERIV_01"
+    ],
+    "MATH_INTEG_01": [
+      "MATH_DERIV_01",
+      "MATH_DERIV_02"
+    ],
+    "CHEM_BAL_01": [
+      "CHEM_REACT_01"
+    ],
+    "CHEM_BAL_02": [
+      "CHEM_BAL_01",
+      "CHEM_REACT_01"
+    ]
+  },
+  "stem_transformation_rules": {
+    "FUNC_INTRO": [
+      "Cho hàm số {func_desc} $y = f(x) = {expr}$.",
+      "Cho hàm số $y = {expr}$.",
+      "Xét hàm số $f(x)$ xác định bởi công thức $f(x) = {expr}$.",
+      "Cho đường cong $(C)$ là đồ thị của hàm số $y = {expr}$.",
+      "Biết $f(x) = {expr}$ là hàm số liên tục và có đạo hàm trên tập xác định.",
+      "Cho đồ thị $(C): y = {expr}$."
+    ],
+    "CHEM_INTRO": [
+      "Cho sơ đồ phản ứng hóa học: {eq}.",
+      "Xét phương trình hóa học sau: {eq}.",
+      "Thực hiện phản ứng vô cơ: {eq}.",
+      "Trong phòng thí nghiệm, xét phản ứng: {eq}."
+    ]
+  },
+  "rules": [
+    {
+      "id": "R_DIFF_01",
+      "name": "Phân loại câu hỏi mức Dễ",
+      "priority": "NORMAL",
+      "condition_vi": "Áp dụng trực tiếp 1 công thức cơ bản (x^n, sin x, a^x, phân loại 4 phản ứng)",
+      "action_vi": "Xếp vào mức Dễ, thời gian định mức 30 - 35 giây"
+    },
+    {
+      "id": "R_DIFF_02",
+      "name": "Phân loại câu hỏi mức Trung bình",
+      "priority": "NORMAL",
+      "condition_vi": "Áp dụng đạo hàm tích u.v, thương u/v, tính tại x0, bảo toàn nhóm hoặc đổi biến đơn giản",
+      "action_vi": "Xếp vào mức Trung bình, thời gian định mức 50 - 65 giây"
+    },
+    {
+      "id": "R_DIFF_03",
+      "name": "Phân loại câu hỏi mức Khá",
+      "priority": "HIGH",
+      "condition_vi": "Hàm hợp nhiều lớp, đạo hàm cấp 2, tiếp tuyến // hoặc vuông góc, nguyên hàm từng phần, thăng bằng electron",
+      "action_vi": "Xếp vào mức Khá, thời gian định mức 75 - 95 giây"
+    },
+    {
+      "id": "R_DIFF_04",
+      "name": "Phân loại câu hỏi mức Khó",
+      "priority": "HIGH",
+      "condition_vi": "Bài toán tham số m, cực trị, đồng nhất hệ số nguyên hàm, hoặc oxi hóa - khử đa nguyên tố (FeS2, Cu2S + HNO3)",
+      "action_vi": "Xếp vào mức Khó, thời gian định mức 110 - 135 giây"
+    },
+    {
+      "id": "R_TRANS_STEM",
+      "name": "Luật biến đổi linh hoạt lời dẫn đề bài",
+      "priority": "HIGH",
+      "condition_vi": "Khi sinh câu hỏi mới hoặc tạo biến thể từ khung tri thức",
+      "action_vi": "Luân phiên 6 mẫu diễn đạt Toán và 4 mẫu diễn đạt Hóa học"
+    },
+    {
+      "id": "R_BUGGY_GEN",
+      "name": "Luật tạo phương án nhiễu từ lỗi sai thực tế",
+      "priority": "HIGH",
+      "condition_vi": "Khi tính toán đáp án bằng SymPy cho đạo hàm, nguyên hàm và hóa học",
+      "action_vi": "Sinh nhiễu từ lỗi quên nhân u'(x), nhầm (u.v)'=u'.v', quên hệ số 1/k, quên cộng HNO3 môi trường"
+    },
+    {
+      "id": "R_DIAG_01",
+      "name": "Phát hiện lỗ hổng kiến thức & Gợi ý bài ôn tập",
+      "priority": "HIGH",
+      "condition_vi": "Học viên làm sai nhiều (dưới 50%) ở chuyên đề nâng cao",
+      "action_vi": "Truy tìm chuyên đề nền tảng liên quan để khuyên học viên ôn lại kèm cách làm tổng quát"
+    },
+    {
+      "id": "R_CHEM_PASSIVE",
+      "name": "Luật thụ động hóa kim loại trong axit đặc nguội",
+      "priority": "HIGH",
+      "condition_vi": "Phản ứng có Al, Fe hoặc Cr gặp HNO3 đặc nguội hoặc H2SO4 đặc nguội",
+      "action_vi": "Kết luận kim loại bị thụ động hóa, không xảy ra phản ứng giải phóng khí"
+    },
+    {
+      "id": "R_CHEM_PRECIP",
+      "name": "Luật nhận diện điều kiện phản ứng trao đổi ion",
+      "priority": "NORMAL",
+      "condition_vi": "Trộn 2 dung dịch muối/axit/bazơ trong nước",
+      "action_vi": "Kiểm tra sự tạo thành kết tủa (AgCl, BaSO4, Cu(OH)2, Fe(OH)3), khí (CO2, SO2) hoặc H2O"
+    },
+    {
+      "id": "R_CHEM_SELF_REDOX",
+      "name": "Luật cân bằng phản ứng tự oxi hóa - khử",
+      "priority": "NORMAL",
+      "condition_vi": "Một nguyên tố vừa tăng vừa giảm số oxi hóa (Cl2 + NaOH, NO2 + NaOH)",
+      "action_vi": "Cân bằng electron từ vế sản phẩm trước rồi cộng dồn hệ số chất tham gia"
+    },
+    {
+      "id": "R_MATH_CHAIN_TRAP",
+      "name": "Luật phát hiện bẫy đạo hàm hàm hợp",
+      "priority": "NORMAL",
+      "condition_vi": "Học viên chọn phương án thiếu nhân tử u'(x)",
+      "action_vi": "Cảnh báo lỗi quên nhân đạo hàm lớp trong u'(x) trong phần chẩn đoán"
+    },
+    {
+      "id": "R_ADAPTIVE_STEP_UP",
+      "name": "Luật nâng mức độ khó thích ứng",
+      "priority": "HIGH",
+      "condition_vi": "Học viên trả lời đúng liên tiếp câu Trung bình/Khá nhanh hơn định mức",
+      "action_vi": "Tăng điểm năng lực theta và ưu tiên rút câu Khá/Khó có hàm thông tin Fisher cao"
+    },
+    {
+      "id": "R_ADAPTIVE_REMEDIAL",
+      "name": "Luật hạ mức và ôn tập củng cố nền tảng",
+      "priority": "HIGH",
+      "condition_vi": "Học viên làm sai câu Dễ hoặc đánh lụi quá nhanh (< 35% thời gian chuẩn)",
+      "action_vi": "Phạt hệ số đoán mò (1.25x) và tăng trọng số rút câu cơ bản ở lần tạo đề tiếp theo"
+    }
+  ]
+}
